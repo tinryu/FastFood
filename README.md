@@ -7,13 +7,15 @@ Demo gallery elevatezoom (zoom+fancybox)
 ## Getting Started
 
 Include jQuery and the plugin on a page. Include your images and initialise the plugin.
+
+```html
+<!--LIB-->
 <script src='jquery-1.11.0.min.js'></script>
 <script src='jquery.elevateZoom-3.0.8.min.js'></script>
-
 <link href="fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <script src='fancybox/jquery.mousewheel-3.0.6.pack.js' type='text/javascript'></script>		
 <script src='fancybox/jquery.fancybox.js' type='text/javascript'></script>
-```html
+<!--LIB-->
 <div class="man0img">
 	<img id="zoom_01" src='images/small/image1.png' data-zoom-image="images/large/image1.jpg"/>
 </div>
