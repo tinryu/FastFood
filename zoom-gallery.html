@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>Demo gallery elevatezoom (zoom+fancybox)</title>
+	<script src='new_ver/jquery-1.11.0.min.js'></script>
+	<script src='new_ver/jquery.elevateZoom-3.0.8.min.js'></script>
+
+	<link href="http://tmg.cnv.vn/js/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+	<script src='http://tmg.cnv.vn/js/fancybox/jquery.mousewheel-3.0.6.pack.js' type='text/javascript'></script>		
+	<script src='http://tmg.cnv.vn/js/fancybox/jquery.fancybox.js' type='text/javascript'></script>
+</head>
+<body>
+<h1>Demo gallery elevatezoom (zoom+fancybox) </h1>
+<div class="col-md-5">
+	<div class="slide-pro">
+	<script>
+		$(document).ready(function () {
+			$('.fancybox').fancybox();
+
+			$("#zoom_01").elevateZoom({
+				gallery:'slide-detail-carousel-1', 
+				cursor: 'pointer', 
+				galleryActiveClass: 'active', 
+				imageCrossfade: true,
+				loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'
+			}); 
+			//pass the images to Fancybox
+			$("#zoom_01").bind("click", function(e) {  
+			  var ez =   $('#zoom_01').data('elevateZoom');	
+				$.fancybox(ez.getGalleryList());
+			  return false;
+			});
+		});
+	</script>
+	
+		<div class="man0img">
+		<img id="zoom_01" src='images/small/image1.png' data-zoom-image="images/large/image1.jpg"/>
+		</div>
+		<div id="slide-detail-carousel-1">
+			<a class="item" href="#" data-image="images/small/image1.png" data-zoom-image="images/large/image1.jpg">
+			<img id="zoom_01" src="images/thumb/image1.jpg" />
+			</a>
+
+			<a class="item" href="#" data-image="images/small/image2.png" data-zoom-image="images/large/image2.jpg">
+			<img id="zoom_01" src="images/thumb/image2.jpg" />
+			</a>
+
+			<a class="item" href="#" data-image="images/small/image3.png" data-zoom-image="images/large/image3.jpg">
+			<img id="zoom_01" src="images/thumb/image3.jpg" />
+			</a>
+
+			<a class="item" href="#" data-image="images/small/image4.png" data-zoom-image="images/large/image4.jpg">
+			<img id="zoom_01" src="images/thumb/image4.jpg" />
+			</a>
+
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.col-md-5{
+		width: 50%;
+		float: left;
+	}
+	#slide-detail-carousel-1{
+		padding-top: 10px;
+	}
+	#slide-detail-carousel-1 .item{
+		float: left;
+	
+	}
+	#slide-detail-carousel-1 .item img{
+	
+	}
+	#slide-detail-carousel-1 img{
+		border:2px solid white;
+	}
+	.active img{
+		border:2px solid #333 !important;
+	}
+</style>
+</body>
+</html>
